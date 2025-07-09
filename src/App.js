@@ -1,11 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import Nav from './components/Nav.js';
+import Header from './components/Header.js';
+import Main from './components/Main.js';
+import Footer from './components/Footer.js';
+
 
 function App() {
   return (
-    <div className="App">
-      <p>This is the base of the app</p>
-    </div>
+    <>
+      <Nav></Nav>
+      <Header></Header>
+      <Main></Main>
+      <Footer></Footer>
+    </>
   );
 }
 
