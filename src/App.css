@@ -8,6 +8,8 @@
   --main-green: #495E57;
   --secondary-gray: #EDEFEE;
   --secondary-black: #333333;
+  --secondary-pink: #FBDABB;
+  --secondary-orange: #EE9972;
 }
 
 h1 {
@@ -62,6 +64,14 @@ p {
   font-size: 18pt;
 }
 
+h4 {
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 18pt;
+}
+
 .price {
   font-family: "Karla", sans-serif;
   font-optical-sizing: auto;
@@ -76,7 +86,6 @@ header {
   gap: 100px;
   display: flex;
   background-color: var(--main-green);
-  max-height: 406px;
   color: var(--secondary-gray);
   padding: 2rem;
   overflow: visible;
@@ -142,6 +151,10 @@ nav a {
   color: var(--secondary-black);
 }
 
+nav a:hover {
+  color: var(--secondary-orange);
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -193,8 +206,34 @@ main article {
 
 footer {
   display: flex;
+  justify-content: center;
   background-color: var(--main-green);
   min-height: 417px;
+  padding: 4rem 0;
+}
+
+footer div {
+  display: block;
+  border: 1px solid red;
+  padding: 1rem;
+  color: var(--secondary-gray);
+}
+
+footer ul {
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16pt;
+}
+
+footer a {
+  color: var(--secondary-gray);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--secondary-orange);
 }
 
 ul {
@@ -204,5 +243,30 @@ ul {
 @media screen and (max-width: 400px) {
     nav ul, nav, footer {
       flex-direction: column;
+    }
+
+    header img {
+      display: none;
+    }
+
+    .main-div {
+      width: 95%;
+    }
+
+    header p {
+      max-width: 100%;
+    }
+
+    .button-large, .button-normal {
+      display: block;
+      margin: auto;
+    }
+
+    nav ul {
+      display: none;
+    }
+
+    .card {
+      width: 100%;
     }
 }
