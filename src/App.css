@@ -27,6 +27,7 @@ h1 {
 
 h2 {
   display: block;
+  color: var(--secondary-black);
   font-family: "Markazi Text", serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -36,7 +37,17 @@ h2 {
   line-height: 0.65;
 }
 
+h4 {
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 18pt;
+  margin-bottom: 1rem;
+}
+
 p {
+  color: var(--secondary-black);
   max-width: 65ch;
 }
 
@@ -64,11 +75,11 @@ p {
   font-size: 18pt;
 }
 
-h4 {
+.lead-text {
   font-family: "Karla", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: bold;
+  font-weight: 400;
+  font-style: normal;
   font-size: 18pt;
 }
 
@@ -96,6 +107,7 @@ header h1, header h2 {
 }
 
 header p {
+  color: var(--secondary-gray);
   margin-top: 2rem;
   max-width: 60%;
 }
@@ -103,7 +115,13 @@ header p {
 .main-div {
   width: 65%;
   display: flex;
+  margin: auto;
   border: 1px solid red;
+}
+
+.large-div {
+  width: 100%;
+  padding: 5rem 0;
 }
 
 header .main-div div {
@@ -162,13 +180,22 @@ main {
   align-items: center;
   background-color: #ffffff;
   min-height: 406px;
-  padding: 2rem;
   margin-top: 75px;
 }
 
 main article {
   height: 440px;
   width: 100%;
+}
+
+main p {
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16pt;
+  margin-top: 2rem;
+
 }
 
 .card {

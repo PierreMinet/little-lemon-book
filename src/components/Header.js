@@ -6,8 +6,8 @@ function Header() {
             <div className='main-div'>
                 <article>
                     <h1>Little Lemon</h1>
-                    <h2>Chicago</h2>
-                    <p className="section-category">We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
+                    <h2 style={{color:"#EDEFEE"}}>Chicago</h2>
+                    <p className="lead-text">We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
                     <button style={{marginTop: 25}} className='button-normal section-category'>Reserve a table</button>
                 </article>
                 <article className='hero-image'>
