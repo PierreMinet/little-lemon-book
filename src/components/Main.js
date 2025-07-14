@@ -8,35 +8,29 @@ import { useState, useReducer } from "react";
 
 function Main() {
 
-    // const [availableTimes, setAvailableTimes] = useState([
-    //     "17:00",
-    //     "18:00",
-    //     "19:00",
-    //     "20:00",
-    //     "21:00",
-    //     "22:00",
-    // ]);
-
-    const initializeTimes = () => {return (
-        [
+    const initializeTimes = () => [
             "17:00",
             "18:00",
             "19:00",
             "20:00",
             "21:00",
             "22:00",
-        ]
-    );};
+        ];
+
     const updateTimes = () => {};
 
-    const [availableTimes, updateTimes] = useReducer(updateTimes, initializeTimes);
+    const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
 
     return (
         <main>
             <Nav />
             <Routes>
                 <Route path="/" element={<Homepage />} />
-                <Route path="/booking" element={<Bookingpage availableTimes={availableTimes} />} />
+                <Route
+                path="/booking"
+                element={<Bookingpage 
+                availableTimes={availableTimes}
+                dispatch={dispatch} />} />
             </Routes>
             <Footer />
         </main>
