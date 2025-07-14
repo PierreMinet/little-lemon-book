@@ -1,14 +1,6 @@
 import { useState } from "react";
 
-function BookingForm() {
-    const availableTimes = [
-        "17:00",
-        "18:00",
-        "19:00",
-        "20:00",
-        "21:00",
-        "22:00",
-    ];
+function BookingForm(props) {
 
     const occasions = [
         "Birthday",
@@ -20,7 +12,7 @@ function BookingForm() {
     const [guestsAmount, setGuestAmount] = useState(1);
     const [resOccasion, setResOccasion] = useState('Birthday');
 
-    const timesOptions = availableTimes.map((time) => <option key={time}>{time}</option>);
+    const timesOptions = props.availableTimes.map((time) => <option key={time}>{time}</option>);
     const occasionOptions = occasions.map((occasion) => <option key={occasion}>{occasion}</option>);
 
     const handleSubmit = (e) => {

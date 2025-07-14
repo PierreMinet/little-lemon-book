@@ -1,9 +1,16 @@
-import Booking from './Booking.js';
+import BookingForm from "./BookingForm";
 
-function Bookingpage() {
+function Bookingpage(props) {
     return(
         <>
-            <Booking />
+            <article>
+                <div className='main-div'>
+                    <h2 style={{color:"#333333"}}>Reservations</h2>
+                </div>
+                <div className='main-div' style={{marginTop:"50px"}}>
+                    <BookingForm availableTimes={props.availableTimes} />
+                </div>
+            </article>
         </>
     );
 }
