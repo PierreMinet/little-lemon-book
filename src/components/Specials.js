@@ -4,12 +4,11 @@ import { Link } from 'react-router-dom';
 function Specials() {
     return(
         <article className="large-div">
-            <div className='main-div'>
+            <div className='main-div title-div'>
                 <h2 style={{color:"#333333"}}>This week's specials!</h2>
                 <Link to="/" style={{marginLeft: "auto"}} className='button-normal section-category'>Online Menu</Link>
             </div>
-            <div className='main-div'>
-                <article>
+            <div className='main-div' style={{marginTop:"50px"}}>
                     <div className="card">
                         <div className='card-img-container'>
                             <img src={salad} width={350} height={390} alt="Greek salad" />
@@ -19,7 +18,6 @@ function Specials() {
                             <span className='price'>$12.99</span>
                         </div>
                     </div>
-                </article>
             </div>
         </article>
     );

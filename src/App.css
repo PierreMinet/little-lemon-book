@@ -12,28 +12,29 @@
   --secondary-orange: #EE9972;
 }
 
-h1, h2 {
+h1, h2, h3, h4 {
   display: block;
+  width: fit-content;
+  height: fit-content;
+}
+
+h1, h2 {
   color: var(--main-yellow);
   font-family: "Markazi Text", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   font-size: 64pt;
-  width: fit-content;
-  height: fit-content;
   line-height: 0.65;
 }
 
 h3 {
-  display: block;
   color: var(--secondary-black);
   font-family: "Markazi Text", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   font-size: 40pt;
-  width: fit-content;
   line-height: 0.65;
 }
 
@@ -93,11 +94,10 @@ p {
 }
 
 header {
+  display: flex;
   width: 100%;
   position: relative;
   justify-content: center;
-  gap: 100px;
-  display: flex;
   background-color: var(--main-green);
   color: var(--secondary-gray);
   padding: 2rem;
@@ -114,17 +114,29 @@ header p {
   max-width: 60%;
 }
 
+article {
+  width: 100%;
+  padding: 5rem 0;
+}
+
 .main-div {
-  width: 65%;
+  width: 60%;
   display: flex;
   margin: auto;
   border: 1px solid red;
 }
 
-.large-div {
-  width: 100%;
-  padding: 5rem 0;
+.vertical-div {
+  flex-direction: column;
 }
+/* article .main-div {
+  flex-direction: column;
+}
+
+.title-div {
+  flex-direction: row;
+  justify-content: center;
+} */
 
 header .main-div div {
   border: 1px solid red;
@@ -188,13 +200,7 @@ nav a:hover {
 main {
   display: flex;
   flex-direction: column;
-  align-items: center;
   background-color: #ffffff;
-}
-
-main article {
-  /* height: 440px;
-  min-height: 406px; */
 }
 
 main p {

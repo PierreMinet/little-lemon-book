@@ -2,25 +2,14 @@ import BookingForm from "./BookingForm";
 
 function Booking() {
     return (
-        <>
+        <article>
             <div className='main-div'>
                 <h2 style={{color:"#333333"}}>Reservations</h2>
             </div>
-            <div className='main-div'>
+            <div className='main-div' style={{marginTop:"50px"}}>
                 <BookingForm />
-                {/* <article>
-                    <div className="card">
-                        <div className='card-img-container'>
-                            <img src={salad} width={350} height={390} alt="Greek salad" />
-                        </div>
-                        <div className='card-desc'>
-                            <h3 className='card-title'>Greek salad</h3>
-                            <span className='price'>$12.99</span>
-                        </div>
-                    </div>
-                </article> */}
             </div>
-        </>
+        </article>
     );
 }
 

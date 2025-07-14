@@ -5,15 +5,15 @@ function Header() {
     return (
         <header>
             <div className='main-div'>
-                <article>
+                <div>
                     <h1>Little Lemon</h1>
                     <h3 style={{color:"#EDEFEE"}}>Chicago</h3>
                     <p className="lead-text">We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
                     <Link to="/booking" style={{marginTop: 25}} className='button-normal section-category'>Reserve a table</Link>
-                </article>
-                <article className='hero-image'>
-                    <img src={hero} width={350} height={390} alt="Hero image" />
-                </article>
+                </div>
+                <div className='hero-image'>
+                    <img src={hero} width={375} height={415} alt="Hero image" />
+                </div>
             </div>
         </header>
     );
