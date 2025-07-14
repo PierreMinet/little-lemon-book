@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Specials() {
     return(
-        <>
+        <article className="large-div">
             <div className='main-div'>
                 <h2 style={{color:"#333333"}}>This week's specials!</h2>
                 <Link to="/" style={{marginLeft: "auto"}} className='button-normal section-category'>Online Menu</Link>
@@ -21,7 +21,7 @@ function Specials() {
                     </div>
                 </article>
             </div>
-        </>
+        </article>
     );
 }
 

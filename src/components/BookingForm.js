@@ -59,7 +59,7 @@ function BookingForm() {
                 </select>
             </div>
             <div className="form-div">
-                <input type="submit" />
+                <button type="submit" style={{marginTop: 25}} className='button-normal section-category'>Next</button>
             </div>
         </form>
     );

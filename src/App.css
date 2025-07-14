@@ -93,6 +93,7 @@ p {
 }
 
 header {
+  width: 100%;
   position: relative;
   justify-content: center;
   gap: 100px;
@@ -157,6 +158,7 @@ header img {
 
 .button-normal:hover, .button-large:hover {
   background-color: var(--secondary-orange);
+  cursor: pointer;
 }
 
 nav {
@@ -186,16 +188,13 @@ nav a:hover {
 main {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
   align-items: center;
   background-color: #ffffff;
-  min-height: 406px;
-  margin-top: 75px;
 }
 
 main article {
-  height: 440px;
-  width: 100%;
+  /* height: 440px;
+  min-height: 406px; */
 }
 
 main p {
@@ -243,6 +242,7 @@ main p {
 
 footer {
   display: flex;
+  width: 100%;
   justify-content: center;
   background-color: var(--main-green);
   min-height: 417px;
