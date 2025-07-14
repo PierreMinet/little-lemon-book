@@ -26,7 +26,10 @@ function BookingForm(props) {
                 <label htmlFor="res-date">
                     Choose date
                 </label>
-                <input type="date" id="res-date" value={date} onChange={(e) => setDate(e.target.value)} />
+                <input type="date" id="res-date" value={date} onChange={(e) => {
+                    setDate(e.target.value);
+                    props.dispatch({type: 'UPDATE_TIMES', payload: e.target.value});
+                }} />
             </div>
             <div className="form-div">
                 <label htmlFor="res-time">

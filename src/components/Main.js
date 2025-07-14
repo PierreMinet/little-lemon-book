@@ -1,10 +1,9 @@
 import Nav from './Nav.js';
-import Header from './Header.js';
 import Footer from './Footer.js';
 import Homepage from './Homepage.js';
 import Bookingpage from './Bookingpage.js';
 import {Routes, Route} from 'react-router-dom';
-import { useState, useReducer } from "react";
+import { useReducer } from "react";
 
 function Main() {
 
@@ -17,7 +16,23 @@ function Main() {
             "22:00",
         ];
 
-    const updateTimes = () => {};
+    const updateTimes = (state, action) => {
+        switch (action.type) {
+            case 'UPDATE_TIMES':
+                const date = action.payload;
+                const available = [
+                    "17:00",
+                    "18:00",
+                    "19:00",
+                    "20:00",
+                    "21:00",
+                    "22:00",
+                ];
+                return available;
+            default:
+                return state;
+        }
+        };
 
     const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
 

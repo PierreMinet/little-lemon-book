@@ -8,7 +8,9 @@ function Bookingpage(props) {
                     <h2 style={{color:"#333333"}}>Reservations</h2>
                 </div>
                 <div className='main-div' style={{marginTop:"50px"}}>
-                    <BookingForm availableTimes={props.availableTimes} />
+                    <BookingForm 
+                    availableTimes={props.availableTimes}
+                    dispatch={props.dispatch} />
                 </div>
             </article>
         </>
