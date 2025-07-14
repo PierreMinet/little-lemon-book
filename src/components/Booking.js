@@ -1,10 +1,13 @@
+import BookingForm from "./BookingForm";
+
 function Booking() {
     return (
         <>
             <div className='main-div'>
-                <h2>Reservations</h2>
+                <h2 style={{color:"#333333"}}>Reservations</h2>
             </div>
             <div className='main-div'>
+                <BookingForm />
                 {/* <article>
                     <div className="card">
                         <div className='card-img-container'>

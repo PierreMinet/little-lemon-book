@@ -12,7 +12,7 @@
   --secondary-orange: #EE9972;
 }
 
-h1 {
+h1, h2 {
   display: block;
   color: var(--main-yellow);
   font-family: "Markazi Text", serif;
@@ -25,7 +25,7 @@ h1 {
   line-height: 0.65;
 }
 
-h2 {
+h3 {
   display: block;
   color: var(--secondary-black);
   font-family: "Markazi Text", serif;
@@ -143,11 +143,20 @@ header img {
 }
 
 .button-normal, .button-large {
+  display: flex;
+  text-decoration: none;
   background-color: var(--main-yellow);
   color: var(--secondary-black);
   border: none;
   border-radius: 16px;
   padding: 0.7rem 2rem;
+  width: fit-content;
+  transition-duration: 0.3s;
+  align-items: center;
+}
+
+.button-normal:hover, .button-large:hover {
+  background-color: var(--secondary-orange);
 }
 
 nav {

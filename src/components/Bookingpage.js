@@ -7,7 +7,6 @@ function Bookingpage() {
     return(
         <>
             <Nav />
-            <Header />
             <main>
                 <Booking />
             </main>

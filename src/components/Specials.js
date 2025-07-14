@@ -1,10 +1,12 @@
 import salad from '../images/greek salad.jpg';
+import { Link } from 'react-router-dom';
 
 function Specials() {
     return(
         <>
             <div className='main-div'>
-                <h1 style={{color:"#333333"}}>This week's specials!</h1>
+                <h2 style={{color:"#333333"}}>This week's specials!</h2>
+                <Link to="/" style={{marginLeft: "auto"}} className='button-normal section-category'>Online Menu</Link>
             </div>
             <div className='main-div'>
                 <article>

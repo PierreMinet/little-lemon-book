@@ -7,11 +7,11 @@ function Nav() {
             <img src={logo} alt="Logo" />
             <ul>
                 <Link to="/" className='lead-text'>Home</Link>
-                <Link><a className='lead-text' href="#">About</a></Link>
-                <Link><a className='lead-text' href="#">Menu</a></Link>
+                <Link className='lead-text'>About</Link>
+                <Link className='lead-text'>Menu</Link>
                 <Link to="/booking" className='lead-text'>Reservations</Link>
-                <Link><a className='lead-text' href="#">Order Online</a></Link>
-                <Link><a className='lead-text' href="#">Login</a></Link>
+                <Link className='lead-text'>Order Online</Link>
+                <Link className='lead-text'>Login</Link>
             </ul>
         </nav>
     );
