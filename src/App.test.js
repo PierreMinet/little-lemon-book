@@ -1,8 +1,30 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import BookingForm from './components/BookingForm';
+import {updateTimes, initializeTimes} from './components/Main';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('Renders the BookingForm heading', () => {
+    render(<BookingForm
+      availableTimes={["17:00", "18:00"]}
+            dispatch={() => {}}  />);
+    const labelElement = screen.getByText("Choose date");
+    expect(labelElement).toBeInTheDocument();
+})
+
+test("initializeTimes returns the expected times arrat", () => {
+  const arrayExpected = [
+    "17:00",
+    "18:00",
+    "19:00",
+    "20:00",
+    "21:00",
+    "22:00",
+  ];
+  expect(initializeTimes()).toEqual(arrayExpected);
+})
+
+test('updateTimes returns current state for unknown action type', () => {
+    const currentState = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+    const action = { type: 'UPDATE_TIMES' };
+    const result = updateTimes(currentState, action);
+    expect(result).toEqual(currentState);
 });

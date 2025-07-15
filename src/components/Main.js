@@ -5,9 +5,7 @@ import Bookingpage from './Bookingpage.js';
 import {Routes, Route} from 'react-router-dom';
 import { useReducer } from "react";
 
-function Main() {
-
-    const initializeTimes = () => [
+export const initializeTimes = () => [
             "17:00",
             "18:00",
             "19:00",
@@ -16,7 +14,7 @@ function Main() {
             "22:00",
         ];
 
-    const updateTimes = (state, action) => {
+export const updateTimes = (state, action) => {
         switch (action.type) {
             case 'UPDATE_TIMES':
                 const date = action.payload;
@@ -33,6 +31,8 @@ function Main() {
                 return state;
         }
         };
+
+function Main() {
 
     const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
 

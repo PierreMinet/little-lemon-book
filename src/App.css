@@ -100,7 +100,7 @@ header {
   justify-content: center;
   background-color: var(--main-green);
   color: var(--secondary-gray);
-  padding: 2rem;
+  padding: 2rem 0;
   overflow: visible;
 }
 
@@ -129,14 +129,6 @@ article {
 .vertical-div {
   flex-direction: column;
 }
-/* article .main-div {
-  flex-direction: column;
-}
-
-.title-div {
-  flex-direction: row;
-  justify-content: center;
-} */
 
 header .main-div div {
   border: 1px solid red;
