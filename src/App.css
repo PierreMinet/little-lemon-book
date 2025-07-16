@@ -123,7 +123,6 @@ article {
   width: 60%;
   display: flex;
   margin: auto;
-  border: 1px solid red;
 }
 
 .vertical-div {
@@ -131,7 +130,6 @@ article {
 }
 
 header .main-div div {
-  border: 1px solid red;
   max-width: 50%;
 }
 
@@ -211,7 +209,6 @@ main p {
   background-color: var(--secondary-gray);
   width: 25%;
   height: 100%;
-  border: 1px solid red;
   border-radius: 16px;
 }
 
@@ -249,7 +246,6 @@ footer {
 
 footer div {
   display: block;
-  border: 1px solid red;
   padding: 1rem;
   color: var(--secondary-gray);
 }

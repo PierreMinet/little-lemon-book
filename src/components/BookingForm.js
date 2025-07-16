@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function BookingForm(props) {
 
@@ -17,10 +18,14 @@ function BookingForm(props) {
     const timesOptions = props.availableTimes.map((time) => <option key={time}>{time}</option>);
     const occasionOptions = occasions.map((occasion) => <option key={occasion}>{occasion}</option>);
 
+    let navigate = useNavigate();
+
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Form sent");
-        console.log(`Date : ${date}, Time: ${time}, Guest: ${guestsAmount}, Occasion: ${resOccasion}`)};
+        console.log(`Date : ${date}, Time: ${time}, Guest: ${guestsAmount}, Occasion: ${resOccasion}`)
+        navigate("/confirm");
+    };
 
     return (
         <form onSubmit={handleSubmit}>

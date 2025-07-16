@@ -4,6 +4,7 @@ import Homepage from './Homepage.js';
 import Bookingpage from './Bookingpage.js';
 import {Routes, Route} from 'react-router-dom';
 import { useReducer, useEffect } from "react";
+import ConfirmedBooking from './ConfirmedBooking.js';
 
 const date = new Date();
 
@@ -48,6 +49,9 @@ function Main() {
                 element={<Bookingpage 
                 availableTimes={availableTimes}
                 dispatch={dispatch} />} />
+                <Route 
+                path="/confirm" 
+                element={<ConfirmedBooking />} />
             </Routes>
             <Footer />
         </main>
