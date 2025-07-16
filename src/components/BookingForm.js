@@ -7,7 +7,9 @@ function BookingForm(props) {
         "Anniversary",
     ];
 
-    const [date, setDate] = useState('');
+    const today = new Date();
+
+    const [date, setDate] = useState(today);
     const [time, setTime] = useState('');
     const [guestsAmount, setGuestAmount] = useState(1);
     const [resOccasion, setResOccasion] = useState('Birthday');

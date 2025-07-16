@@ -3,29 +3,19 @@ import Footer from './Footer.js';
 import Homepage from './Homepage.js';
 import Bookingpage from './Bookingpage.js';
 import {Routes, Route} from 'react-router-dom';
-import { useReducer } from "react";
+import { useReducer, useEffect } from "react";
 
-export const initializeTimes = () => [
-            "17:00",
-            "18:00",
-            "19:00",
-            "20:00",
-            "21:00",
-            "22:00",
-        ];
+const date = new Date();
+
+export let initializeTimes = () => [];
 
 export const updateTimes = (state, action) => {
         switch (action.type) {
             case 'UPDATE_TIMES':
-                const date = action.payload;
-                const available = [
-                    "17:00",
-                    "18:00",
-                    "19:00",
-                    "20:00",
-                    "21:00",
-                    "22:00",
-                ];
+                const newDate = action.payload;
+                console.log(`Updated date : ${newDate}`)
+                const available = fetchAPI(date);
+                console.log(`Updated times : ${available}`)
                 return available;
             default:
                 return state;
@@ -35,6 +25,18 @@ export const updateTimes = (state, action) => {
 function Main() {
 
     const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
+
+    useEffect(() => {
+        console.log("Started useEffect")
+        const loadAPI = async () => {
+            console.log("Async function running");
+            console.log(date);
+            initializeTimes = fetchAPI(date);
+            console.log(fetchAPI(date));
+            console.log(initializeTimes);
+        }
+        loadAPI();
+    },[]);
 
     return (
         <main>
