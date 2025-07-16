@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 function BookingForm(props) {
 
+    const navigate = useNavigate();
+
     const occasions = [
         "Birthday",
         "Anniversary",
@@ -18,13 +20,16 @@ function BookingForm(props) {
     const timesOptions = props.availableTimes.map((time) => <option key={time}>{time}</option>);
     const occasionOptions = occasions.map((occasion) => <option key={occasion}>{occasion}</option>);
 
-    let navigate = useNavigate();
-
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Form sent");
         console.log(`Date : ${date}, Time: ${time}, Guest: ${guestsAmount}, Occasion: ${resOccasion}`)
-        navigate("/confirm");
+        const datas = [date, time, guestsAmount, resOccasion];
+        const dataSubmitted = props.submitForm(datas);
+
+        if (dataSubmitted) {
+            navigate("/confirm");
+        }
     };
 
     return (

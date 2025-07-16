@@ -10,7 +10,9 @@ function Bookingpage(props) {
                 <div className='main-div' style={{marginTop:"50px"}}>
                     <BookingForm 
                     availableTimes={props.availableTimes}
-                    dispatch={props.dispatch} />
+                    dispatch={props.dispatch}
+                    submitForm={props.submitForm}
+                    />
                 </div>
             </article>
         </>

@@ -2,26 +2,30 @@ import Nav from './Nav.js';
 import Footer from './Footer.js';
 import Homepage from './Homepage.js';
 import Bookingpage from './Bookingpage.js';
-import {Routes, Route} from 'react-router-dom';
+import {Routes, Route, useNavigate} from 'react-router-dom';
 import { useReducer, useEffect } from "react";
 import ConfirmedBooking from './ConfirmedBooking.js';
 
 const date = new Date();
 
 export let initializeTimes = () => [];
+const submitForm = (data) => {
+    let submitData = submitAPI(data);
+    return submitData;
+}
 
 export const updateTimes = (state, action) => {
-        switch (action.type) {
-            case 'UPDATE_TIMES':
-                const newDate = action.payload;
-                console.log(`Updated date : ${newDate}`)
-                const available = fetchAPI(date);
-                console.log(`Updated times : ${available}`)
-                return available;
-            default:
-                return state;
-        }
-        };
+    switch (action.type) {
+        case 'UPDATE_TIMES':
+            const newDate = action.payload;
+            console.log(`Updated date : ${newDate}`)
+            const available = fetchAPI(date);
+            console.log(`Updated times : ${available}`)
+            return available;
+        default:
+            return state;
+    }
+};
 
 function Main() {
 
@@ -48,7 +52,9 @@ function Main() {
                 path="/booking"
                 element={<Bookingpage 
                 availableTimes={availableTimes}
-                dispatch={dispatch} />} />
+                dispatch={dispatch}
+                submitForm={submitForm}
+                />} />
                 <Route 
                 path="/confirm" 
                 element={<ConfirmedBooking />} />
