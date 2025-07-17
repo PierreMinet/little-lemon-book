@@ -17,9 +17,9 @@ const submitForm = (data) => {
 export const updateTimes = (state, action) => {
     switch (action.type) {
         case 'UPDATE_TIMES':
-            const newDate = action.payload;
+            const newDate = new Date(action.payload);
             console.log(`Updated date : ${newDate}`)
-            const available = fetchAPI(date);
+            const available = fetchAPI(newDate);
             console.log(`Updated times : ${available}`)
             return available;
         default:
