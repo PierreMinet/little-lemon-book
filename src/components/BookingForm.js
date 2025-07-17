@@ -1,7 +1,37 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import * as Yup from 'yup';
+import { useFormik } from 'formik';
 
 function BookingForm(props) {
+
+    const today = new Date();
+
+    const formik = useFormik({
+        initialValues: {
+            date: formatDate(today),
+            time: props.availableTimes.length > 0 ? props.availableTimes[0] : '',
+            guestsAmount: 1,
+            resOccasion: 'Birthday',
+        },
+        onSubmit: values => {
+            // e.preventDefault();
+            console.log("Form sent");
+            console.log(`Date : ${date}, Time: ${time}, Guest: ${guestsAmount}, Occasion: ${resOccasion}`)
+            const datas = [date, time, guestsAmount, resOccasion];
+            const dataSubmitted = props.submitForm(datas);
+
+            if (dataSubmitted) {
+                navigate("/confirm");
+            }
+        },
+        validationSchema: Yup.object({
+            date: Yup.date().required("Required"),
+            time: Yup.string().required("Required"),
+            guestsAmount: Yup.number().required("Required").positive().integer().min(1).max(10),
+            resOccasion: Yup.string().required("Required"),
+        }),
+    });
 
     const navigate = useNavigate();
 
@@ -10,7 +40,6 @@ function BookingForm(props) {
         "Anniversary",
     ];
 
-    const today = new Date();
     function formatDate(date) {
     return date.toISOString().split("T")[0];
     }
@@ -36,21 +65,26 @@ function BookingForm(props) {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={formik.handleSubmit}>
             <div className="form-div">
-                <label htmlFor="res-date" className="lead-text">
+                <label htmlFor="date" className="lead-text">
                     Choose date
                 </label>
                 <input
                 type="date"
-                id="res-date"
-                value={date}
+                name="date"
+                id="date"
                 onChange={(e) => {
                     setDate(e.target.value);
                     props.dispatch({type: 'UPDATE_TIMES', payload: e.target.value});
                 }}
+                onBlur={formik.handleBlur}
+                defaultValue={formik.values.date}
                 required
                 />
+                {formik.touched.date && formik.errors.date && (
+                <div className="error">{formik.errors.date}</div>
+                )}
             </div>
             <div className="form-div">
                 <label htmlFor="res-time" className="lead-text">
@@ -75,10 +109,15 @@ function BookingForm(props) {
                 min={1}
                 max={10}
                 id="guests"
-                value={guestsAmount}
-                onChange={(e) => setGuestAmount(e.target.value)}
+                // value={guestsAmount}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                {...formik.getFieldProps("guestsAmount")}
                 required
                 />
+                {formik.touched.guestsAmount && formik.errors.guestsAmount && (
+                <div className="error">{formik.errors.guestsAmount}</div>
+                )}
             </div>
             <div className="form-div">
                 <label htmlFor="occasion" className="lead-text">
@@ -94,7 +133,7 @@ function BookingForm(props) {
                 </select>
             </div>
             <div className="form-div">
-                <button type="submit" style={{marginTop: 25}} className='button-normal section-category'>Next</button>
+                <button type="submit" style={{margin:"auto"}} className='button-normal section-category'>Next</button>
             </div>
         </form>
     );
