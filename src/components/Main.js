@@ -8,7 +8,10 @@ import ConfirmedBooking from './ConfirmedBooking.js';
 
 const date = new Date();
 
-export let initializeTimes = () => [];
+export let initializeTimes = () => {
+    const today = new Date();
+    return fetchAPI(today);
+};
 const submitForm = (data) => {
     let submitData = submitAPI(data);
     return submitData;

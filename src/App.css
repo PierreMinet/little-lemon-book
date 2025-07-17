@@ -271,6 +271,42 @@ ul {
   list-style: none;
 }
 
+.form-div {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+input, select {
+  display: flex;
+  text-decoration: none;
+  background-color: transparent;
+  color: var(--secondary-black);
+  border: 2px solid var(--secondary-black);
+  border-radius: 16px;
+  padding: 0.7rem 2rem;
+  min-width: 15%;
+  transition-duration: 0.3s;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18pt;
+}
+
+input:hover, select:hover {
+  background-color: var(--secondary-gray);
+}
+
+select {
+  padding: 0.7rem 0;
+}
+
 @media screen and (max-width: 400px) {
     nav ul, nav, footer {
       flex-direction: column;

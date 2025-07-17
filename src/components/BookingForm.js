@@ -11,9 +11,12 @@ function BookingForm(props) {
     ];
 
     const today = new Date();
+    function formatDate(date) {
+    return date.toISOString().split("T")[0];
+    }
 
-    const [date, setDate] = useState(today);
-    const [time, setTime] = useState('');
+    const [date, setDate] = useState(formatDate(today));
+    const [time, setTime] = useState(props.availableTimes.length > 0 ? props.availableTimes[0] : '');
     const [guestsAmount, setGuestAmount] = useState(1);
     const [resOccasion, setResOccasion] = useState('Birthday');
 
@@ -35,33 +38,58 @@ function BookingForm(props) {
     return (
         <form onSubmit={handleSubmit}>
             <div className="form-div">
-                <label htmlFor="res-date">
+                <label htmlFor="res-date" className="lead-text">
                     Choose date
                 </label>
-                <input type="date" id="res-date" value={date} onChange={(e) => {
+                <input
+                type="date"
+                id="res-date"
+                value={date}
+                onChange={(e) => {
                     setDate(e.target.value);
                     props.dispatch({type: 'UPDATE_TIMES', payload: e.target.value});
-                }} />
+                }}
+                required
+                />
             </div>
             <div className="form-div">
-                <label htmlFor="res-time">
+                <label htmlFor="res-time" className="lead-text">
                     Choose time
                 </label>
-                <select id="res-time" value={time} onChange={(e) => setTime(e.target.value)}>
+                <select
+                id="res-time"
+                value={time}
+                onChange={(e) => setTime(e.target.value)}
+                required
+                >
                     {timesOptions};
                 </select>
             </div>
             <div className="form-div">
-                <label htmlFor="guests">
+                <label htmlFor="guests" className="lead-text">
                     Number of guests
                 </label>
-                <input type="number" placeholder="1" min={1} max={10} id="guests" value={guestsAmount} onChange={(e) => setGuestAmount(e.target.value)} />
+                <input
+                type="number"
+                placeholder="1"
+                min={1}
+                max={10}
+                id="guests"
+                value={guestsAmount}
+                onChange={(e) => setGuestAmount(e.target.value)}
+                required
+                />
             </div>
             <div className="form-div">
-                <label htmlFor="occasion">
+                <label htmlFor="occasion" className="lead-text">
                     Occasion
                 </label>
-                <select id="occasion" value={resOccasion} onChange={(e) => setResOccasion(e.target.value)}>
+                <select
+                id="occasion"
+                value={resOccasion}
+                onChange={(e) => setResOccasion(e.target.value)}
+                required
+                >
                     {occasionOptions}
                 </select>
             </div>
