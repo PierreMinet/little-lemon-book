@@ -137,7 +137,7 @@ function BookingForm(props) {
                 )}
             </div>
             <div className="form-div">
-                <button type="submit" aria-label="Submit booking form" style={{margin:"auto"}} className='button-normal section-category'>Next</button>
+                <button type="submit" aria-label="Submit booking form" style={{margin:"auto"}} className='button-normal section-category'>Confirm booking</button>
             </div>
         </form>
     );

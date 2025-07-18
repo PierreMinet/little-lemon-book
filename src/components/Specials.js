@@ -6,7 +6,7 @@ function Specials() {
         <article className="large-div">
             <div className='main-div title-div'>
                 <h2 style={{color:"#333333"}}>This week's specials!</h2>
-                <Link to="/" aria-label="Food menu" style={{marginLeft: "auto"}} className='button-normal section-category'>Online Menu</Link>
+                <Link to="/" aria-label="Food menu" className='button-normal section-category button-right'>Online Menu</Link>
             </div>
             <div className='main-div' style={{marginTop:"50px"}}>
                     <div className="card">
