@@ -26,9 +26,9 @@ function BookingForm(props) {
             }
         },
         validationSchema: Yup.object({
-            date: Yup.date().required("Required"),
+            date: Yup.date().required("Required").min(formatDate(today)),
             time: Yup.string().required("Required"),
-            guestsAmount: Yup.number().required("Required").positive().integer().min(1).max(10),
+            guestsAmount: Yup.number().required("Required").positive().integer().min(1, 'The minimum amount of guests is 1.').max(10, 'The maximum amount of guests is 10.'),
             resOccasion: Yup.string().required("Required"),
         }),
     });
@@ -94,10 +94,12 @@ function BookingForm(props) {
                 id="res-time"
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
-                required
-                >
+                required>
                     {timesOptions};
                 </select>
+                {formik.touched.timesOptions && formik.errors.timesOptions && (
+                <div className="error">{formik.errors.timesOptions}</div>
+                )}
             </div>
             <div className="form-div">
                 <label htmlFor="guests" className="lead-text">
@@ -105,7 +107,7 @@ function BookingForm(props) {
                 </label>
                 <input
                 type="number"
-                placeholder="1"
+                placeholder="Guests"
                 min={1}
                 max={10}
                 id="guests"
@@ -127,13 +129,15 @@ function BookingForm(props) {
                 id="occasion"
                 value={resOccasion}
                 onChange={(e) => setResOccasion(e.target.value)}
-                required
-                >
+                required>
                     {occasionOptions}
                 </select>
+                {formik.touched.resOccasion && formik.errors.resOccasion && (
+                <div className="error">{formik.errors.resOccasion}</div>
+                )}
             </div>
             <div className="form-div">
-                <button type="submit" style={{margin:"auto"}} className='button-normal section-category'>Next</button>
+                <button type="submit" aria-label="Submit booking form" style={{margin:"auto"}} className='button-normal section-category'>Next</button>
             </div>
         </form>
     );

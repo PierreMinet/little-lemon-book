@@ -10,7 +10,7 @@ function ConfirmedBooking() {
                 <p style={{marginLeft:"auto", marginRight:"auto", display:"block"}}>Your reservation has been properly handled !</p>
             </div>
             <div className='main-div' style={{marginTop:"25px"}}>
-                <Link to="/" className='button-normal section-category' style={{marginLeft:"auto", marginRight:"auto", display:"block"}}>Back to homepage</Link>
+                <Link to="/" aria-label="Home page" className='button-normal section-category' style={{marginLeft:"auto", marginRight:"auto", display:"block"}}>Back to homepage</Link>
             </div>
         </article>
     );
