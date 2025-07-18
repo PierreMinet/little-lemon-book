@@ -111,7 +111,7 @@ header h1, header h2 {
 header p {
   color: var(--secondary-gray);
   margin-top: 2rem;
-  max-width: 60%;
+  max-width: 80%;
 }
 
 article {
@@ -129,6 +129,10 @@ article {
   flex-direction: column;
 }
 
+header .main-div {
+  width: 50%;
+}
+
 header .main-div div {
   max-width: 50%;
 }
@@ -143,8 +147,11 @@ header img {
   border-radius: 16px;
   position: relative;
   margin-bottom: -250px;
+  max-width: 375px;
+  max-height: 390px;
   width: 100%;
   height: auto;
+  object-fit: cover;
 }
 
 .button-normal, .button-large {
@@ -411,7 +418,7 @@ select {
   }
 
   header .main-div {
-    width: 90%;
+    width: 80%;
   }
 
   header .main-div div {
@@ -425,6 +432,7 @@ select {
 
   header img {
     height: 100%;
+    width: 100%;
     object-fit: cover;
   }
 }
