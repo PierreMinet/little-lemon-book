@@ -347,6 +347,10 @@ select {
   margin-left: auto;
 }
 
+.nav-burger {
+  display: none;
+}
+
 @media screen and (max-width: 550px) {
     nav ul, nav, footer {
       flex-direction: column;
@@ -379,8 +383,13 @@ select {
       margin: auto;
     }
 
-    nav ul {
-      display: none;
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+    }
+
+    .nav-menu.active {
+        display: flex;
     }
 
     .card {
